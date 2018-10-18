@@ -14,6 +14,25 @@ __player = {
     'speed' : 10
 }
 
+__enemies = {
+    'width' : 40,
+    'height' : 30,
+    'speed' : 20,
+    'color' : (255, 0, 0)
+}
+
+def get_width_enemy():
+    return __enemies.get('width')
+
+def get_height_enemy():
+    return __enemies.get('height')
+
+def get_speed_enemy():
+    return __enemies.get('speed')
+
+def get_color_enemy():
+    return __enemies.get('color')
+
 def get_width():
     return __game.get('width')
 
