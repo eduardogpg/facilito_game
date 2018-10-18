@@ -45,4 +45,10 @@ def get_speed_player():
     return __player.get('speed')
 
 def get_floor_color():
-    return __get.get('floor_color')
+    return __game.get('floor_color')
+
+def get_heigth_floor():
+    return 20
+
+def get_pos_y_floor():
+    return get_heigth() - get_heigth_floor()
