@@ -11,6 +11,7 @@ __player = {
     'color' : (50, 180, 180),
     'width' : 20,
     'height' : 20,
+    'speed' : 10
 }
 
 def get_width():
@@ -39,6 +40,9 @@ def get_width_player():
 
 def get_heigth_player():
     return __player.get('height')
+
+def get_speed_player():
+    return __player.get('speed')
 
 def get_floor_color():
     return __get.get('floor_color')

@@ -8,8 +8,8 @@ from .Config import (get_mode,
                     get_heigth,
                     get_width,
                     get_floor_color)
-
 from .Player import Player
+from .Rect import Rect
 
 class Game:
     def __init__(self):
@@ -39,25 +39,16 @@ class Game:
                     pygame.quit()
                     sys.exit()
 
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_LEFT:
+                        self.player.move_left()
+                    if event.key == pygame.K_RIGHT:
+                        self.player.move_right()
+
             self.display.fill( get_background_color() )
 
-            self.floor.draw(), self.player.draw()
+            self.player.draw(), self.floor.draw()
+            self.player.jump()
 
             pygame.display.update()
             self.clock.tick(self.fps)
-
-class Rect:
-    def __init__(self, display, pos_x, pos_y, width, height, color):
-        self.display = display
-        self.pos_x = pos_x
-        self.pos_y = pos_y
-        self.width = width
-        self.height = height
-        self.color = color
-
-    def draw(self):
-        pygame.draw.rect(
-            self.display,
-            self.color,
-            (self.pos_x, self.pos_y, self.width, self.height )
-        )
